@@ -60,7 +60,7 @@ LIBDIRS=-L$(CMSISBASE)/4.5.0/CMSIS/Lib/GCC -L/Users/guy/development/arduino-core
 EXTLIBS=-larm_cortexM0l_math -lcore-samd21 -lsched
 
 # Flags
-CFLAGS=-c -mcpu=$(DEVICE) -mthumb -Wall -std=c99 -ffunction-sections -fdata-sections -nostdlib --param max-inline-insns-single=500 -DF_CPU=48000000L -DARDUINO=10813 -DARDUINO_SAMD_MKRWAN1310 -DARDUINO_ARCH_SAMD -DUSE_ARDUINO_MKR_PIN_LAYOUT -D__SAMD21G18A__ -DUSE_BQ24195L_PMIC -DVERY_LOW_POWER $(INCLUDEFLAGS)
+CFLAGS=-c -mcpu=$(DEVICE) -mthumb -Wall -std=c99 -ffunction-sections -fdata-sections -nostdlib --param max-inline-insns-single=500 -DF_CPU=48000000L -DARDUINO=10813 -DARDUINO_SAMD_MKRWAN1310 -DARDUINO_ARCH_SAMD -DUSE_ARDUINO_MKR_PIN_LAYOUT -D__SAMD21G18A__ -DUSE_BQ24195L_PMIC -DVERY_LOW_POWER
 DEPFLAGS = -MT $@ -MMD -MP -MF $(DEP)/$*.Td
 LFLAGS=-Wl,--gc-sections -T$(SAMDBASE)/variants/mkrwan1300/linker_scripts/gcc/flash_with_bootloader.ld --specs=nano.specs --specs=nosys.specs -mcpu=cortex-m0plus -mthumb $(LIBDIRS) -Wl,--check-sections -Wl,--gc-sections -Wl,--warn-common -Wl,--warn-section-align
 OBJCOPYFLAGS=-O ihex -R .eeprom
